@@ -1,0 +1,61 @@
+#include <iostream>
+#include <list>
+
+using namespace std;
+
+void main()
+{
+
+	double Ain [6] = { 100000, 25000, 0, 50000 , 1000 , 10000};
+	double Aout[6] = { 2500,625,0,1250,25,250 };
+	double InUs;
+	double Zk;
+	int n =1;
+	bool ZF=true;
+	
+	for (int i = 0; i < n;)
+	{
+	   cout << "Enter the amount: ";
+	   cin >> InUs;
+	   if (InUs == -99999)
+	   {
+		   n = 0;
+		   ZF = false;
+	   }
+	   else
+	   {
+		   Zk = InUs * 0.025;
+	   }
+	   
+	   if (Zk >= 250 && ZF == true)
+	   {
+           cout << "The Zakah is: " << Zk << endl;
+		   cout << "If you have finished, place the number -99999" << endl;
+	   }
+	   else
+	   { if(ZF == true)
+		   cout << "The Zakah is: " << 0 << endl;
+	   }
+
+	   //Expecting Test
+
+	   for (int i = 0; i <= 5;)
+	   {
+		   if (InUs == Ain[i])
+		   {
+			   if (Zk == Aout[i])
+			   {
+				   cout << "The Test is Correct." << endl;
+			   }
+			   else
+			   {
+				   cout << "Test error, Error in results pane." << endl;
+			   }
+		   }
+		   i++;
+	   }
+	}
+	
+
+	system("pause");
+}
